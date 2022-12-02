@@ -1,0 +1,17 @@
+/*Week-3
+a)	Identification of Vowels and Consonants
+/*
+%option noyywrap
+%{
+#include<stdio.h>
+%}
+%%
+[aeiouAEIOU]+ {printf("vowel\n");}
+[a-zA-Z] {printf("consonant\n");}
+%%
+int main()
+{
+printf("Enter a character:");
+yylex();
+return 0;
+}

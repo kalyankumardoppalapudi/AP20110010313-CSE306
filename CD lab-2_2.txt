@@ -1,0 +1,26 @@
+
+/*WEEK 2
+• Identifiers with the regular expression : letter(letter | digit)*
+• Integers with the regular expression: digit+
+• Relational operators: &lt;, &gt;, &lt;=, &gt;=, ==, !=
+*/
+%{
+	#include<stdio.h>
+%}
+
+%%
+
+["<" | "<=" | ">" | ">=" | "==" | "!="] {printf("%s is a relational operator\n",yytext);}
+%%
+
+int yywrap() 
+{
+	return 1;
+}
+
+int main()
+{
+	printf("Enter the string: ");
+	yylex();
+	return 0;
+}
