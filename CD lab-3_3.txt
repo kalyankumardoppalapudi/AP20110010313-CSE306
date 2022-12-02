@@ -1,0 +1,20 @@
+/*
+c. Count the number of Lines in given input
+*/
+%option noyywrap
+%{
+#include<stdio.h>
+int c=0;
+%}
+%%
+\n c++;
+.
+%%
+int main()
+{
+printf("Enter Input:");
+yylex();
+printf("Number of lines: %d\n",c);
+getch();
+return 0;
+}
